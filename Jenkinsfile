@@ -16,14 +16,14 @@ pipeline {
     stage ('Check-Git-Secrets') {
       steps {
         sh 'rm trufflehog || true'
-        sh 'docker run gesellix/trufflehog --json https://github.com/Achaursiya/Proj.git > trufflehog'
+        sh 'docker run gesellix/trufflehog --json https://github.com/Adityajaa/finalproject.git > trufflehog'
         sh 'cat trufflehog'
       }
     }
     stage ('Source Composition Analysis') {
       steps {
          sh 'rm owasp* || true'
-         sh 'wget "https://raw.githubusercontent.com/Achaursiya/Proj/main/owasp-dependency.sh" '
+         sh 'wget "https://raw.githubusercontent.com/Adityajaa/finalproject/main/owasp-dependency.sh" '
          sh 'chmod +x owasp-dependency.sh'
          sh 'bash owasp-dependency.sh'
          
@@ -47,7 +47,7 @@ pipeline {
     stage ('Deploy-To-Tomcat') {
             steps {
            sshagent(['192.168.80.225']) {
-                sh 'scp -o StrictHostKeyChecking=no target/*.war ashish@192.168.80.131:/home/ashish/prod/apache-tomcat-9.0.60/webapps/webapp.war'
+                sh 'scp -o StrictHostKeyChecking=no target/*.war ashish@192.168.80.225:/home/shuhari/prod/apache-tomcat-9.0.64/webapps/webapp.war'
               }      
            }       
     }

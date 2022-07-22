@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Group number 23</title>
+    <title>Group number 12</title>
 
     <!-- Custom styles for this template -->
     <link href="jumbotron.css" rel="stylesheet">

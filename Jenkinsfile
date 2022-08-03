@@ -12,12 +12,11 @@ pipeline {
             ''' 
       }
     }
-    stage ('Deploy-To-Tomcat') {
+    stage ('Build') {
             steps {
-           sshagent(['192.168.80.225']) {
-                sh 'scp -o StrictHostKeyChecking=no target/*.war ashish@192.168.80.225:/home/shuhari/prod/apache-tomcat-9.0.60/webapps/webapp.war'
-              }      
+            sh 'mav clean package'
+              }       
            }       
     }
   }
-}
+

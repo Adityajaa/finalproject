@@ -13,10 +13,10 @@ pipeline {
       }
     }
     stage ('Build') {
-            steps {
-            sh 'mav clean package'
-              }       
-           }       
-    }
+      steps {
+      sh 'mav clean package'
+     }       
+     }       
   }
+}
 

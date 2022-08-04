@@ -18,6 +18,7 @@ pipeline {
         sh 'rm trufflehog || true'
         sh ' docker run gesellix/trufflehog --json https://github.com/Adityajaa/finalproject.git > trufflehog'
         sh 'cat trufflehog'
+        sh 'cat /var/lib/jenkins /OWASP-Dependency-check/reports/dependency-check-report.xml'
       }
     }
     

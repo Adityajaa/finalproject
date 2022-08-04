@@ -24,8 +24,8 @@ pipeline {
       steps {
          sh 'rm owasp* || true'
          sh 'wget "https://raw.githubusercontent.com/Adityajaa/finalproject/master/owasp-dependency-check.sh" '
-         sh 'chmod +x owasp-dependency.sh'
-         sh 'bash owasp-dependency.sh'    
+         sh 'chmod +x owasp-dependency-check.sh'
+         sh 'bash owasp-dependency-check.sh'    
       }
     }
     stage ('Build') {

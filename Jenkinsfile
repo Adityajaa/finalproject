@@ -13,6 +13,7 @@ pipeline {
       }
     }
     
+   
     stage ('Check-Git-Secrets') {
       steps {
         sh 'rm trufflehog || true'
@@ -20,6 +21,7 @@ pipeline {
         sh 'cat trufflehog'
       }
     }
+    
     stage ('Source Composition Analysis') {
       steps {
          sh 'rm owasp* || true'
@@ -28,6 +30,7 @@ pipeline {
          sh 'bash owasp-dependency-check.sh'    
       }
     }
+    
     stage ('Build') {
       steps {
       sh 'mvn clean package'

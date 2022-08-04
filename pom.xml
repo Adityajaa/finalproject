@@ -17,7 +17,7 @@
   </dependencies>
   
 <dependencyManagement>
-<build>
+
   <plugins>
     <plugin>
           <groupId>org.owasp</groupId>
